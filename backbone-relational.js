@@ -626,10 +626,11 @@
 			this.setKeyContents( this.instance.get( contentKey ) );
 			this.relatedCollection = Backbone.Relational.store.getCollection( this.relatedModel );
 
+			//правленно
 			// Explicitly clear 'keySource', to prevent a leaky abstraction if 'keySource' differs from 'key'.
-			if ( this.keySource !== this.key ) {
-				delete this.instance.attributes[ this.keySource ];
-			}
+			//if ( this.keySource !== this.key ) {
+			//	delete this.instance.attributes[ this.keySource ];
+			//}
 
 			// Add this Relation to instance._relations
 			this.instance._relations[ this.key ] = this;
@@ -1316,11 +1317,11 @@
 							this.trigger( 'relational:change:' + rel.key, this, value, options || {} );
 						}
 					}
-
+					//поправленно
 					// Explicitly clear 'keySource', to prevent a leaky abstraction if 'keySource' differs from 'key'.
-					if ( rel.keySource !== rel.key ) {
-						delete this.attributes[ rel.keySource ];
-					}
+					//if ( rel.keySource !== rel.key ) {
+					//	delete this.attributes[ rel.keySource ];
+					//}
 				}, this );
 			}
 		},
